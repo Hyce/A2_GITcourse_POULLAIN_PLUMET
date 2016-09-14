@@ -92,12 +92,12 @@ input:focus {
 	width: 100%;
 	font-size: 11px;
 	text-transform: uppercase;
-	background-color: #f50;
+	background-color: #65d46e;
 	padding: 10px;
 }
 
 #logbox.register .form-submit input[type="submit"] {
-	background-color: #f50;
+	background-color: #65d46e;
 }
 
 #logbox .form-submit input[type="submit"]:active {
@@ -117,7 +117,7 @@ input:focus {
 }
 
 #error {
-	color: #e74c3c;
+	color: #65d46e;
 }
 
 .back-btn {
@@ -169,8 +169,8 @@ p.account a {
 
 #topbar a.btn {
 	border: none;
-	background-color: #f50;
-	border: solid 1px #F50;
+	background-color: #65d46e;
+	border: solid 1px #65d46e;
 	float: right;
 	line-height: 25px;
 	color:white;
@@ -183,8 +183,8 @@ p.account a {
 
 #topbar a.btn:hover {
 	background-color: #fff;
-	color: #F50;
-	border: solid 1px #F50;
+	color: #65d46e;
+	border: solid 1px #65d46e;
 	text-decoration: none;
 }
 
@@ -212,15 +212,15 @@ p.account a {
 }
 
 .music:hover{
-	border: solid 1px #f50;
+	border: solid 1px #65d46e;
 }
 
 .music.playing {
-	border: solid 1px #f50;
+	border: solid 1px #65d46e;
 }
 
 .music.playing h3{
-	color: #f50;
+	color: #65d46e;
 	font-weight: bold;
 }
 
@@ -390,7 +390,7 @@ p.account a {
 }
 
 .audiojs .scrubber .progress{
-	background: #F50;
+	background: #65d46e;
 	border-radius: 0;
 }
 
