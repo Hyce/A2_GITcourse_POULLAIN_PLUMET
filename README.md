@@ -1,1 +1,1 @@
-# A2_GITcourse_POULLAIN_PLUMET
+# IIM_A2_GIT
