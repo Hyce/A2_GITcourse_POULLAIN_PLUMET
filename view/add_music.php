@@ -26,7 +26,7 @@
 										<label for="file">Musique</label>
 										<input type="file" name="music">
 										<p>
-											Extensions autorisées : .mp3, .ogg
+											Extensions autorisées : .mp3, .ogg, .mp4, .avi
 										</p>
 									</div>
 									<p class="clearfix"><button type="submit" class="valid pull-right"><i class="fa fa-check"></i>Envoyer</button></p>
