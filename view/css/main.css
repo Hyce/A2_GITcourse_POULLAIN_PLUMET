@@ -103,7 +103,7 @@ input:focus {
 	font-size: 11px;
 	text-transform: uppercase;
 	background-color: #65d46e;
-	padding: 10px;
+	padding: 20px;
 }
 
 #logbox.register .form-submit input[type="submit"] {
@@ -111,7 +111,7 @@ input:focus {
 }
 
 #logbox .form-submit input[type="submit"]:active {
-	margin-top: 3px;
+	margin-top: 10px;
 	border-bottom: 2px solid #2c3e50;
 	transition:all 0.1s linear;
 }
