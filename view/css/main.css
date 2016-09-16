@@ -1,5 +1,5 @@
 body {
-	background-color: #E9E9E9;
+	background-color: #e5e7e9;
 }
 
 input:focus {
@@ -234,7 +234,6 @@ p.account a {
 	font-weight: bold;
 }
 
-.music
 .block b {
 	text-transform: uppercase;
 	letter-spacing: 1px;
