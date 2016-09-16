@@ -20,7 +20,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 		header('Location: dashboard.php');
 
 	}else{
-		$error = 'Champs requis !';
+		$error = 'You have to fill in all the informations !';
 	}
 }
 
