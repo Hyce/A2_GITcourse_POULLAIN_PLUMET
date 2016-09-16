@@ -1,19 +1,14 @@
 <?php
-// define variables and set to empty values
-$name = $email = $gender = $comment = $website = "";
+require('config/config.php');
+require('model/functions.fn.php');
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$name = test_input($_POST["name"]);
-	$email = test_input($_POST["email"]);
-	$website = test_input($_POST["website"]);
-	$comment = test_input($_POST["comment"]);
-	$gender = test_input($_POST["gender"]);
-}
+if(	isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && 
+	!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
 
-function test_input($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
+	// TODO
+
+}else{ 
+	$_SESSION['message'] = 'Erreur : Formulaire incomplet';
+	header('Location: register.php');
 }
-?>

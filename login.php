@@ -1,27 +1,32 @@
 <?php session_start();
-function CheckLoginInDB($username,$password)
-{
-	if(!$this->DBLogin())
-	{
-		$this->HandleError("Database login failed!");
-		return false;
-	}
-	$username = $this->SanitizeForSQL($username);
-	$pwdmd5 = md5($password);
-	$qry = "Select name, email from $this->tablename ".
-		" where username='$username' and password='$pwdmd5' ".
-		" and confirmcode='y'";
 
-	$result = mysql_query($qry,$this->connection);
+/********************************
+	 DATABASE & FUNCTIONS
+********************************/
+require('config/config.php');
+require('model/functions.fn.php');
 
-	if(!$result || mysql_num_rows($result) <= 0)
-	{
-		$this->HandleError("Error logging in. ".
-			"The username or password does not match");
-		return false;
+
+/********************************
+			PROCESS
+********************************/
+
+if(isset($_POST['email']) && isset($_POST['password'])){
+	if(!empty($_POST['email']) && !empty($_POST['password'])){
+
+		userConnection($db, $_POST['email'], $_POST['password']);
+
+
+		header('Location: dashboard.php');
+
+	}else{
+		$error = 'Champs requis !';
 	}
-	return true;
 }
+
+/********************************
+			VIEW
+********************************/
 include 'view/_header.php';
 include 'view/login.php';
 include 'view/_footer.php';
