@@ -4,42 +4,37 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div id="musicfeed">
-                <h1><i class="fa fa-pencil"></i> Edit your profile image</h1>
+                <h1><i class="fa fa-pencil"></i> Albums</h1>
                 <div class="block animated fadeInDown">
                     <div class="row">
                         <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
-                            <div class="author">
+                            <div class="albums">
                                 <?php
-                                if(isset($_SESSION['image']) && !empty($_SESSION['image'])){
-                                    echo '<a href="view/edit_image.php"><img src="' .$_SESSION['image'].'" alt=""></a>';
+                                session_start();
+                                require('config/config.php');
+                                require('model/functions.fn.php');
+
+                                if( isset($_FILES['music']) && !empty($_FILES['music']) &&
+                                isset($_POST['title']) && !empty($_POST['title'])){
+
+                                $file = $_FILES['music'];
+
+                                // Si le "fichier" reçu est bien un fichier
+                                $ext = strtolower(substr(strrchr($file['name'], '.')  ,1));
+                                // Vérification des extentions
+                                if (preg_match('/\.(mp3|ogg)$/i', $file['name'])) {
+                                $filename = md5(uniqid(rand(), true));
+                                $destination = "musics/{$filename}.{$_SESSION['id']}.{$ext}";
+
+                                // TODO
+
+                                } else {
+                                $error = 'Erreur, le fichier n\'a pas une extension autorisée !';
                                 }
-                                else{
-                                    echo '<a href="view/edit_image.php"><img src="view/profil_pic/undefined.jpg" alt=""></a>';
+                                // }
                                 }
                                 ?>
                             </div>
-                        </div>
-                        <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
-
-                            <?php
-                            if(isset($error) && !empty($error)){
-                                echo '<div class="alert alert-danger alert-dismissable">';
-                                echo '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-                                echo  $error;
-                                echo '</div>';
-                            }
-                            ?>
-
-                            <b class="username"><?php echo $_SESSION['username']; ?></b>
-                            <p>
-                                <br>
-                                Allowed Extensions : .jpg, .png et .gif
-                            </p>
-                            <form action="view/edit_image.php" method="POST" enctype="multipart/form-data">
-                                <input type="file" name="image">
-                                <p class="clearfix"><button type="submit" class="valid pull-right"><i class="fa fa-check"></i> Valider</button></p>
-                            </form>
-
                         </div>
                     </div>
                 </div>
