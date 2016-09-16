@@ -33,7 +33,9 @@
 		});
 	</script>
 	<?php } ?>
-	<div class="foott"><img src="" alt=""></div>
+	<div class="foott">
+	<a href="www.spotify.com">
+	<img src="images/logo-spotify.png" alt=""></a></div>
 
 </body>
 </html>
