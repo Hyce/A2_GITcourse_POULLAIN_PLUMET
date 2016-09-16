@@ -12,12 +12,12 @@ input:focus {
 
 #logbox {
 	padding: 40px;
-	background-color: #333;
+	background-color: #001a0d;
 	color: #fff;
 }
 
 #logbox.register {
-	background-color: #333;
+	background-color: #001a0d;
 }
 
 #logbox h1 {
